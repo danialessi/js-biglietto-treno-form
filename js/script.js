@@ -12,10 +12,15 @@ var generateButton = document.getElementById("generate-button");
 
 generateButton.addEventListener('click', function() {
     // codice da svolgere al click 
+
+    // displayonclick 
+    var ticket = document.getElementById("ticket");
+    ticket.className = ticket.classList + "displayonclick";
     
     // nome utente 
     var userGenerator = document.getElementById("name");
     var userName = userGenerator.value;
+    document.getElementById("username").innerHTML = userName;
     console.log(userName);
 
     // km da percorrere 
@@ -30,5 +35,50 @@ generateButton.addEventListener('click', function() {
 
     // genero il biglietto sapendo che il prezzo al km è 0.21 € e va applicato uno sconto del 20% per minorenni e 40% over65
 
+    // prezzo di default (quindi maggiorenne) 
+    var defaultPrice = kmUser * 0.21;
+    defaultPrice = defaultPrice.toFixed(2);
+    // console.log("prezzo intero", defaultPrice);
 
+    // prezzo scontato al 20%
+    var percent20 = (defaultPrice / 100) * 20;
+    percent20 = percent20.toFixed(2);
+    console.log("sconto 20", percent20);
+
+    // prezzo scontato al 40%
+    var percent40 = (defaultPrice / 100) * 40;
+    percent40 = percent40.toFixed(2);
+    // console.log("sconto 40", percent40);
+
+    // condizioni per generare il prezzo finale e popolare i risultati 
+
+    var finalPrice = defaultPrice;
+    console.log("prezzo intero", finalPrice);
+
+    if (userAge === "minorenne") {
+        finalPrice = defaultPrice - percent20;
+        console.log("prezzo dopo sconto 20", finalPrice);
+
+        // popolo html 
+        document.getElementById("offer").innerHTML = "sconto 20%";
+        document.getElementById("total").innerHTML = finalPrice;
+
+    } else if (userAge === "over65") {
+        finalPrice = defaultPrice - percent40;
+
+        // popolo html 
+        document.getElementById("offer").innerHTML = "sconto 40%";
+        document.getElementById("total").innerHTML = finalPrice;
+
+    } else {
+        document.getElementById("total").innerHTML = finalPrice;
+    }
+
+    // genero numeri casuali per carrozza
+    var casualNumber = Math.floor(Math.random() * (15-1) + 1);
+    document.getElementById("carrozza").innerHTML = casualNumber;
+
+    // genero numeri casuali per codice CP
+    var casualNumberCP = Math.floor(Math.random() * (100000-90000) + 90000);
+    document.getElementById("cpcode").innerHTML = casualNumberCP;
 })

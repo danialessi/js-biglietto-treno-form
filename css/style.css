@@ -39,12 +39,17 @@ body {
 
 /* ticket  */
 .ticket-generator-row {
+    display: none;
     margin: 20px auto;
     padding: 10px;
     background-color: white;
 }
 
-.ticket {
+.displayonlick {
+    display: block;
+}
+
+.ticket-content {
     border: 1px solid black;
     height: 200px;
 }
