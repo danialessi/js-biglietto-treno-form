@@ -1,0 +1,51 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #b91450;
+}
+
+.wrapper {
+    width: 80%;
+    height: 550px;
+    margin: auto;
+    padding: 20px;
+    text-align: center;
+}
+
+.wrapper h1 {
+    color: white;
+}
+
+/* form  */
+.user-date-row {
+    margin: 20px auto;
+    padding: 10px;
+    background-color: white;
+    
+}
+
+.item {
+    padding: 20px;
+}
+
+.buttons {
+    margin: auto;
+}
+/* end form  */
+
+/* ticket  */
+.ticket-generator-row {
+    margin: 20px auto;
+    padding: 10px;
+    background-color: white;
+}
+
+.ticket {
+    border: 1px solid black;
+    height: 200px;
+}
+/* end ticket  */
