@@ -45,12 +45,17 @@ body {
     background-color: white;
 }
 
-.displayonlick {
-    display: block;
-}
-
 .ticket-content {
     border: 1px solid black;
     height: 200px;
 }
 /* end ticket  */
+
+/* buttons  */
+.displayonlick {
+    display: block;
+}
+
+.displaynone {
+    display: none;
+}

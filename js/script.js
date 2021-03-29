@@ -10,13 +10,13 @@
 // Definisco funzionalità del bottone 
 var generateButton = document.getElementById("generate-button");
 
+var ticket = document.getElementById("ticket");
+
 generateButton.addEventListener('click', function() {
     // codice da svolgere al click 
 
     // displayonclick 
-    var ticket = document.getElementById("ticket");
-    console.log(ticket);
-    ticket.className = ticket.classList + " " + "displayonclick";
+    ticket.classList.add("displayonlick");
     
     // nome utente 
     var userGenerator = document.getElementById("name");
@@ -72,6 +72,7 @@ generateButton.addEventListener('click', function() {
         document.getElementById("total").innerHTML = finalPrice;
 
     } else {
+        document.getElementById("offer").innerHTML = "";
         document.getElementById("total").innerHTML = finalPrice;
     }
 
@@ -82,4 +83,18 @@ generateButton.addEventListener('click', function() {
     // genero numeri casuali per codice CP
     var casualNumberCP = Math.floor(Math.random() * (100000-90000) + 90000);
     document.getElementById("cpcode").innerHTML = casualNumberCP;
+})
+
+// genero azione al tasto annulla 
+
+var cancelButton = document.getElementById("cancel-button");
+// console.log(cancelButton);
+
+cancelButton.addEventListener('click', function() {
+    
+    ticket.classList.add("displaynone");
+    
+    document.getElementById("name").value = "";
+    document.getElementById("km").value = "";
+
 })
