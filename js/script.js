@@ -15,7 +15,8 @@ generateButton.addEventListener('click', function() {
 
     // displayonclick 
     var ticket = document.getElementById("ticket");
-    ticket.className = ticket.classList + "displayonclick";
+    console.log(ticket);
+    ticket.className = ticket.classList + " " + "displayonclick";
     
     // nome utente 
     var userGenerator = document.getElementById("name");
@@ -43,7 +44,7 @@ generateButton.addEventListener('click', function() {
     // prezzo scontato al 20%
     var percent20 = (defaultPrice / 100) * 20;
     percent20 = percent20.toFixed(2);
-    console.log("sconto 20", percent20);
+    // console.log("sconto 20", percent20);
 
     // prezzo scontato al 40%
     var percent40 = (defaultPrice / 100) * 40;
